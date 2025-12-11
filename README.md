@@ -12,7 +12,8 @@ An autonomous AI Agent capable of **reasoning, coding, and executing Python scri
 
 Below is an example of the agent running in **verbose mode**. You can observe the **Reasoning Loop** as the model analyzes the request, plans the necessary steps, and executes the Python code.
 
-<img width="100%" alt="AI Agent Demo" src="[https://github.com/user-attachments/assets/980946e3-2b72-401d-baeb-9776114584fc](https://github.com/user-attachments/assets/980946e3-2b72-401d-baeb-9776114584fc)" />
+<img width="1919" height="384" alt="ai-agentt" src="https://github.com/user-attachments/assets/f409f71e-0976-4bb3-b72e-632cf5a1e47d" />
+
 
 *(In this example, the agent autonomously writes a script, executes it, and verifies the output)*
 
