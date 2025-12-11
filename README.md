@@ -1,3 +1,5 @@
+Markdown
+
 # 🤖 AI Coding Agent
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
@@ -12,7 +14,7 @@ An autonomous AI Agent capable of **reasoning, coding, and executing Python scri
 
 Below is an example of the agent running in **verbose mode**. You can observe the **Reasoning Loop** as the model analyzes the request, plans the necessary steps, and executes the Python code.
 
-![AI Agent Demo](assets/ai-agent.png)
+<img width="100%" alt="AI Agent Demo" src="https://github.com/user-attachments/assets/980946e3-2b72-401d-baeb-9776114584fc" />
 
 *(In this example, the agent autonomously writes a script, executes it, and verifies the output)*
 
@@ -42,8 +44,6 @@ AI-AGENT/
 │   ├── pkg/             # Helper packages
 │   └── tests.py         # Unit tests
 └── .env                 # API Keys (Not included in repo)
-
-
 🛠️ Installation & Setup
 This project is built using uv for modern Python package management.
 
