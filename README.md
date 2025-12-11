@@ -12,7 +12,7 @@ An autonomous AI Agent capable of **reasoning, coding, and executing Python scri
 
 Below is an example of the agent running in **verbose mode**. You can observe the **Reasoning Loop** as the model analyzes the request, plans the necessary steps, and executes the Python code.
 
-![alt text](ai-agentt-1.png)
+![AI Agent Demo](assets/ai-agent.png)
 
 *(In this example, the agent autonomously writes a script, executes it, and verifies the output)*
 
@@ -42,3 +42,54 @@ AI-AGENT/
 │   ├── pkg/             # Helper packages
 │   └── tests.py         # Unit tests
 └── .env                 # API Keys (Not included in repo)
+
+
+🛠️ Installation & Setup
+This project is built using uv for modern Python package management.
+
+1. Clone the repository
+Bash
+
+git clone [https://github.com/zagos09/ai-coding-agent.git](https://github.com/zagos09/ai-coding-agent.git)
+cd ai-coding-agent
+2. Set up environment
+Using uv (Recommended):
+
+Bash
+
+uv sync
+Using standard pip (Alternative):
+
+Bash
+
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install google-genai python-dotenv
+3. Configure API Key
+Create a .env file in the root directory and add your Google Gemini API key:
+
+Ini, TOML
+
+GEMINI_API_KEY=your_api_key_here
+💻 Usage
+Run the agent by describing what you want it to do.
+
+Basic Example:
+
+Bash
+
+python main.py "Create a Python script that calculates the Fibonacci sequence"
+Verbose Mode (See the thinking process):
+
+Bash
+
+python main.py "Analyze the files in the pkg folder and tell me what they do" --verbose
+🛡️ Security Note
+This agent allows an AI model to execute code on your machine.
+
+Sandbox: Execution is limited to the calculator/ directory by default.
+
+Review: Always review the code the agent writes if you are using this in a production environment.
+
+🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
