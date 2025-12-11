@@ -1,5 +1,3 @@
-Markdown
-
 # 🤖 AI Coding Agent
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
@@ -14,7 +12,7 @@ An autonomous AI Agent capable of **reasoning, coding, and executing Python scri
 
 Below is an example of the agent running in **verbose mode**. You can observe the **Reasoning Loop** as the model analyzes the request, plans the necessary steps, and executes the Python code.
 
-<img width="100%" alt="AI Agent Demo" src="https://github.com/user-attachments/assets/980946e3-2b72-401d-baeb-9776114584fc" />
+<img width="100%" alt="AI Agent Demo" src="[https://github.com/user-attachments/assets/980946e3-2b72-401d-baeb-9776114584fc](https://github.com/user-attachments/assets/980946e3-2b72-401d-baeb-9776114584fc)" />
 
 *(In this example, the agent autonomously writes a script, executes it, and verifies the output)*
 
@@ -44,52 +42,62 @@ AI-AGENT/
 │   ├── pkg/             # Helper packages
 │   └── tests.py         # Unit tests
 └── .env                 # API Keys (Not included in repo)
-🛠️ Installation & Setup
-This project is built using uv for modern Python package management.
+```
 
-1. Clone the repository
-Bash
+## 🛠️ Installation & Setup
 
-git clone [https://github.com/zagos09/ai-coding-agent.git](https://github.com/zagos09/ai-coding-agent.git)
+This project is built using **[uv](https://github.com/astral-sh/uv)** for modern Python package management.
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/zagos09/ai-coding-agent.git
 cd ai-coding-agent
-2. Set up environment
-Using uv (Recommended):
+```
 
-Bash
+### 2. Set up environment
 
+**Using `uv` (Recommended):**
+```bash
 uv sync
-Using standard pip (Alternative):
+```
 
-Bash
-
+**Using standard `pip` (Alternative):**
+```bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install google-genai python-dotenv
-3. Configure API Key
-Create a .env file in the root directory and add your Google Gemini API key:
+```
 
-Ini, TOML
-
+### 3. Configure API Key
+Create a `.env` file in the root directory and add your Google Gemini API key:
+```ini
 GEMINI_API_KEY=your_api_key_here
-💻 Usage
+```
+
+## 💻 Usage
+
 Run the agent by describing what you want it to do.
 
-Basic Example:
-
-Bash
-
+**Basic Example:**
+```bash
 python main.py "Create a Python script that calculates the Fibonacci sequence"
-Verbose Mode (See the thinking process):
+```
 
-Bash
-
+**Verbose Mode (See the thinking process):**
+```bash
 python main.py "Analyze the files in the pkg folder and tell me what they do" --verbose
-🛡️ Security Note
-This agent allows an AI model to execute code on your machine.
+```
 
-Sandbox: Execution is limited to the calculator/ directory by default.
+## 🛡️ Security Note
 
-Review: Always review the code the agent writes if you are using this in a production environment.
+This agent allows an AI model to **execute code** on your machine.
+* **Sandbox:** Execution is limited to the `calculator/` directory by default.
+* **Review:** Always review the code the agent writes if you are using this in a production environment.
 
-🤝 Contributing
+## 🤝 Contributing
+
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## 📄 License
+
+[MIT](https://choosealicense.com/licenses/mit/)
