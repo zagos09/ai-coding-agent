@@ -1,104 +1,59 @@
-# 🤖 AI Coding Agent
+# AI Coding Agent
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![Gemini API](https://img.shields.io/badge/Powered%20by-Google%20Gemini-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
+An intelligent, autonomous development assistant designed to bridge the gap between high-level logic and functional code execution. This agent leverages advanced LLMs to analyze requirements and generate structured code solutions efficiently.
 
-An autonomous AI Agent capable of **reasoning, coding, and executing Python scripts** within a secure sandbox environment. Powered by Google's Gemini models, this agent can autonomously solve problems by writing and testing its own code.
+## Motivation
+Most AI assistants are confined to simple chat interfaces, requiring manual copy-pasting and context management. I built the **AI Coding Agent** because I wanted to create a tool that moves beyond conversation and focuses on autonomous task execution. By integrating AI reasoning directly with a Python-based execution engine, this project demonstrates how we can automate complex development workflows and reduce the time spent on repetitive coding tasks.
 
----
-
-## 📸 See it in action
-
-Below is an example of the agent running in **verbose mode**. You can observe the **Reasoning Loop** as the model analyzes the request, plans the necessary steps, and executes the Python code.
-
-<img width="1919" height="384" alt="ai-agentt" src="https://github.com/user-attachments/assets/f409f71e-0976-4bb3-b72e-632cf5a1e47d" />
-
-
-*(In this example, the agent autonomously writes a script, executes it, and verifies the output)*
-
----
-
-## 🚀 Features
-
-* **🧠 Reasoning Loop:** Uses a "Thought → Plan → Action" cycle to break down complex tasks.
-* **🛠️ Tool Use:** Can list files, read content, write code, and execute Python scripts.
-* **🔒 Sandboxed Execution:** All code execution is restricted to the `./calculator` directory to prevent system-wide modifications.
-* **⚡ Powered by `uv`:** Blazing fast dependency management.
-
-## 📂 Project Structure
-
-```text
-AI-AGENT/
-├── main.py              # The brain: Agent loop and API communication
-├── prompts.py           # System instructions (Persona)
-├── config.py            # Configuration settings
-├── functions/           # Tool definitions
-│   ├── get_files_info.py
-│   ├── get_file_content.py
-│   ├── run_python_file.py
-│   └── write_file.py
-├── calculator/          # 🛡️ SANDBOX: The agent only works here
-│   ├── main.py          # Custom Calculator Tool
-│   ├── pkg/             # Helper packages
-│   └── tests.py         # Unit tests
-└── .env                 # API Keys (Not included in repo)
-```
-
-## 🛠️ Installation & Setup
-
-This project is built using **[uv](https://github.com/astral-sh/uv)** for modern Python package management.
+## Quick Start
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/zagos09/ai-coding-agent.git
+git clone [https://github.com/zagos09/ai-coding-agent.git](https://github.com/zagos09/ai-coding-agent.git)
 cd ai-coding-agent
 ```
 
-### 2. Set up environment
-
-**Using `uv` (Recommended):**
+2. Install dependencies
 ```bash
-uv sync
+pip install -r requirements.txt
 ```
 
-**Using standard `pip` (Alternative):**
+3. Set up your API Key
+Create a .env file in the root directory and add your key:
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install google-genai python-dotenv
+OPENAI_API_KEY=your_key_here
 ```
 
-### 3. Configure API Key
-Create a `.env` file in the root directory and add your Google Gemini API key:
-```ini
-GEMINI_API_KEY=your_api_key_here
-```
-
-## 💻 Usage
-
-Run the agent by describing what you want it to do.
-
-**Basic Example:**
+4. Run the Agent
 ```bash
-python main.py "Create a Python script that calculates the Fibonacci sequence"
+python main.py
 ```
 
-**Verbose Mode (See the thinking process):**
+Usage
+The AI Coding Agent can be customized to handle different development scenarios.
+
+Basic Prompting: Run the script and describe the feature you want to build.
+
+Verbose Mode: Use the --verbose flag to see the agent's internal reasoning and step-by-step logic.
+
+Model Selection: Choose between different models (e.g., GPT-4o or GPT-3.5) by editing the configuration file.
+
+Example:
 ```bash
-python main.py "Analyze the files in the pkg folder and tell me what they do" --verbose
+python main.py --task "Create a Python script that scrapes weather data"
 ```
 
-## 🛡️ Security Note
+Contributing
+Contributions are welcome to make this agent even more capable!
 
-This agent allows an AI model to **execute code** on your machine.
-* **Sandbox:** Execution is limited to the `calculator/` directory by default.
-* **Review:** Always review the code the agent writes if you are using this in a production environment.
+Fork the project.
 
-## 🤝 Contributing
+Create your feature branch (git checkout -b feature/AmazingFeature).
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+Commit your changes (git commit -m 'Add some AmazingFeature').
 
-## 📄 License
+Push to the branch (git push origin feature/AmazingFeature).
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Open a Pull Request.
+
+Note: Ensure all tests pass by running pytest before submitting a contribution.
